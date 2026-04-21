@@ -177,3 +177,10 @@ F5
 
 🧠 Workflow summary
 clone → open VS Code → configure → build (F7) → run (F5)
+
+
+cmake --build build --config Release
+ctest --test-dir build -C Release --output-on-failure
+
+cmake --build build --config Debug
+.\build\Debug\main.exe
