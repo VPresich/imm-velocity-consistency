@@ -1,0 +1,65 @@
+# =========================
+# Build folders
+# =========================
+build/
+cmake-build-*/
+out/
+Debug/
+Release/
+
+# =========================
+# CMake
+# =========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# =========================
+# Compiled objects
+# =========================
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+*.ilk
+
+# =========================
+# Visual Studio / VS Code
+# =========================
+.vs/
+.vscode/*.log
+.vscode/ipch/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Outputs
+# =========================
+*.csv
+*.bng
+
+# =========================
+# Eigen (external local library)
+# =========================
+libs/eigen-*/
