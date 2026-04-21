@@ -2,5 +2,5 @@
 
 TEST(SmokeTest, Basic)
 {
-    EXPECT_EQ(2, 2);
+    EXPECT_EQ(1, 1);
 }
