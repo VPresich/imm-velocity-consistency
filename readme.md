@@ -3,7 +3,12 @@
 ## 📌 Overview
 This project implements a high-performance method for evaluating the consistency of velocity estimation in **Interacting Multiple Model (IMM) filters**.
 
-The core logic quantifies the similarity between **prior and posterior velocity distributions** using an integral overlap metric, combining robust **C++ computations** with **Python-powered visualizations**.
+The core logic quantifies the similarity between **prior and posterior velocity distributions** using an integral overlap metric:
+
+$$L = \int p_{prior}(v) p_{post}(v) \, dv$$
+
+This approach combines robust **C++ computations** with **Python-powered visualizations** to evaluate filter health.
+
 
 ### Key Features:
 - **Hybrid Architecture**: C++ for heavy lifting (Monte Carlo, KDE logic) and Python for analysis.
@@ -12,6 +17,11 @@ The core logic quantifies the similarity between **prior and posterior velocity 
 - **Embedded Environment**: Integrated **Python Bridge** and **Environment Loader**.
 
 ---
+
+## 📊 Examples Results
+*   [Example of Consistent Estimation (High Similarity)](assets/consistent_case.png)
+*   [Example of Inconsistent Estimation (Strong Mismatch)](assets/unconsistent_case.png)
+*Automated visualization showing the overlap between Prior and Posterior distributions.*
 
 ## 🔬 Problem Statement
 In tracking systems (radar, robotics, etc.), IMM filters estimate object states across multiple motion models. A critical question for filter health is:
@@ -32,9 +42,17 @@ Since velocity magnitude distribution is non-Gaussian, we use:
 - **Cholesky Decomposition** for sampling state vectors.
 - **KDE (Kernel Density Estimation)** to reconstruct the true velocity PDF.
 
+---
+
 ### 3. Consistency Metric ($C$)
 The similarity is defined as the normalized inner product of the PDFs:
-$$C = \frac{\langle p_{prior}, p_{post} \rangle}{\|p_{prior}\| \cdot \|p_{post}\|}$$
+
+$$\text{Definition: } C = \frac{\langle p_{prior}, p_{post} \rangle}{\|p_{prior}\| \cdot \|p_{post}\|}$$
+
+In this implementation, the components are calculated using integrals of the estimated densities:
+
+$$\text{Implementation: } C = \frac{\int p_{prior}(v) p_{post}(v) \, dv}{\sqrt{\int p_{prior}^2(v) \, dv \cdot \int p_{post}^2(v) \, dv}}$$
+
 - **$C \to 1$**: Strong consistency (filter is healthy).
 - **$C \to 0$**: Strong mismatch (potential tracking failure).
 

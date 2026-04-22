@@ -58,6 +58,8 @@ Thumbs.db
 # =========================
 *.csv
 *.png
+# Allow png files inside assets folder
+!assets/*.png
 
 # =========================
 # Eigen (external local library)
