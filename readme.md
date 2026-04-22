@@ -21,6 +21,7 @@ This approach combines robust **C++ computations** with **Python-powered visuali
 ## 📊 Examples Results
 *   [Example of Consistent Estimation (High Similarity)](assets/consistent_case.png)
 *   [Example of Inconsistent Estimation (Strong Mismatch)](assets/unconsistent_case.png)
+
 *Automated visualization showing the overlap between Prior and Posterior distributions.*
 
 ## 🔬 Problem Statement
